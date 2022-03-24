@@ -1,6 +1,6 @@
 import org.apache.spark.sql.SparkSession
-//HE AGREGADO LA FUNCION SUM
-import org.apache.spark.sql.functions.{desc, hour, to_date, when, sum}
+//HE AGREGADO LA FUNCION SUM Y COUNT
+import org.apache.spark.sql.functions.{desc, hour, to_date, when, sum, count}
 
 object WebLogs extends App {
 
