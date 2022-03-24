@@ -1,5 +1,6 @@
 import org.apache.spark.sql.SparkSession
-import org.apache.spark.sql.functions.{desc, hour, to_date, when}
+//HE AGREGADO LA FUNCION SUM
+import org.apache.spark.sql.functions.{desc, hour, to_date, when, sum}
 
 object WebLogs extends App {
 
@@ -13,8 +14,8 @@ object WebLogs extends App {
   import sparkSession.implicits._
 
   
-  //CAMBIAR EL NOMBRE DEL DF, QUE NO COINCIDE CON EL DE LOS DEMAS
-  var weblogsDF = sparkSession.read
+  //HE CAMBIADO EL NOMBRE DEL DF, QUE NO COINCIDE CON EL DE LOS DEMAS
+  var weblogsDf = sparkSession.read
     .option("header", "true")
     .option("sep", " ")
     .option("inferSchema", "true")
@@ -50,8 +51,8 @@ object WebLogs extends App {
     .na.drop()
     .orderBy(desc("totalByteTransfer"))
     .limit(1)
-//CAMBIAR EL NOMBRE QUE NO COINCIDE CON EL DEL DF DE ARRIBA
-  tran.show()
+//HE CAMBIADO EL NOMBRE QUE NO COINCIDE CON EL DEL DF DE ARRIBA
+  tranr.show()
 
 
   val regis = weblogsDf.groupBy($"requestResource")
