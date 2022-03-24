@@ -12,6 +12,8 @@ object WebLogs extends App {
 
   import sparkSession.implicits._
 
+  
+  //CAMBIAR EL NOMBRE DEL DF, QUE NO COINCIDE CON EL DE LOS DEMAS Y ENTOCES NO FUNCIONA NADA
   var weblogsDF = sparkSession.read
     .option("header", "true")
     .option("sep", " ")
